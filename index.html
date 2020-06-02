@@ -43,6 +43,7 @@
   const divs = document.querySelectorAll('div')
 
   function logText(e) {
+    e.stopPropagation()
     console.log(this.classList.value)
   }
 
@@ -50,7 +51,7 @@
   //bubble bottom -> up
 
   divs.forEach(div => div.addEventListener('click', logText, {
-    capture: true //run the function on the way down
+    capture: false //run the function on the way down
   }))
 
 </script>
