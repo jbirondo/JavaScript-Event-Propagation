@@ -46,7 +46,13 @@
     console.log(this.classList.value)
   }
 
-  divs.forEach(div => div.addEventListener('click', logText))
+  //capture top -> down
+  //bubble bottom -> up
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: true //run the function on the way down
+  }))
+
 </script>
 </body>
 </html>
